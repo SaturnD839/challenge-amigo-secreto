@@ -32,5 +32,22 @@ function mostrarNombres (){
         let nuevoElemento = document.createElement("li"); //Creamos un elemento <li>
         nuevoElemento.textContent = nombreActual;
         lista.appendChild(nuevoElemento); 
-    }   
+    }  
+}
+
+function sortearAmigo(){
+// Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
+    if (amigos.length === 0) {
+        alert("No hay elementos para sortear");
+        return;
+    } 
+
+    // Generar un índice aleatorio
+
+    let indiceAleatorio = Math.floor(Math.random()*amigos.length);
+// Obtener el nombre sorteado
+    let nombreSorteado = amigos[indiceAleatorio];
+     //Mostrar resultado
+     let resultado = document.getElementById("resultado");
+     resultado.innerHTML = "<li>" + nombreSorteado +"<\li>";
 }
