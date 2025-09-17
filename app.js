@@ -16,11 +16,21 @@ function agregarAmigo (){
     } else {
         amigos.push(nombreAmigo); //Agregamos el elemento a la lista inicial
         console.log(amigos); //Pedimos que nos muestre en la consola la lista de amigos
+        mostrarNombres(); 
     }
     entrada.value = ""; //Limpiamos el campo de entrada
 }
 
 //Creamos una función para que se muestre la list con los nombres introducidos
 function mostrarNombres (){
-    
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""; //Limpiar la lista existente
+    //Iterar sobre el arreglo
+    let i = 0;
+    for (i; i<amigos.length; i++){
+        let nombreActual = amigos[i]; //Tomamos el elemento actual de la lista de nombres
+        let nuevoElemento = document.createElement("li"); //Creamos un elemento <li>
+        nuevoElemento.textContent = nombreActual;
+        lista.appendChild(nuevoElemento); 
+    }   
 }
